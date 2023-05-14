@@ -10,9 +10,6 @@ const app = express();
 app.use(express.json());
 await MongooseConnector()
 // Define the routes
-
-// GET /seats
-// Get the availability status of all seats
 app.use('',router)
 app.use(cors());
 app.options("*", cors());
@@ -22,11 +19,6 @@ try {
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
-    // const dbPort = process.env.PORT || 8080
-    // app.listen(dbPort, '0.0.0.0');
-    // var server = app.listen(dbPort, () => {
-    //   console.info(`Listening on port ${dbPort}`);
-    // });
   } catch(error) {
     console.log(error)
     process.exit(1)
