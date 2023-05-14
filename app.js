@@ -1,5 +1,4 @@
 import express from 'express'
-import cors from "cors";
 import dotenv from 'dotenv'
 import MongooseConnector from './src/mongooseConnector.js'
 import router from './src/api\'s/router.js';
@@ -29,5 +28,4 @@ app.listen(port, () => {
     console.log(error)
     process.exit(1)
   }
-  app.use(cors());
 
