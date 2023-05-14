@@ -2,3 +2,10 @@
 
 runtime: nodejs14
 vm: false
+
+handlers:
+  - url: /.*
+    script: auto
+    http_headers:
+      Access-Control-Allow-Origin: "*"
+      Access-Control-Allow-Headers: "Content-Type"
