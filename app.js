@@ -1,8 +1,8 @@
 import express from 'express'
-import dotenv from 'dotenv'
+// import dotenv from 'dotenv'
 import MongooseConnector from './src/mongooseConnector.js'
 import router from './src/api\'s/router.js';
-dotenv.config()
+// dotenv.config()
 const app = express();
 
 // Set up middleware to parse incoming JSON data
@@ -15,7 +15,7 @@ await MongooseConnector()
 app.use('',router)
 
 try {
-  const port = parseInt(process.env.PORT) || 8080;
+  const port =  8080;
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 async function MongooseConnector(){
     try{
-        const dbUri=process.env.MONGO_URI
+        const dbUri="mongodb+srv://madhu_123:madhu@cluster0.4ra5aa2.mongodb.net/test"
 var mongooseDb=mongoose.connect(dbUri,
  { useNewUrlParser: true, useUnifiedTopology: true })
     }catch(error){
