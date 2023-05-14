@@ -16,7 +16,7 @@ await MongooseConnector()
 app.use('',router)
 
 try {
-    const dbPort = 3000
+    const dbPort = 8080
     var server = app.listen(dbPort, () => {
       console.info(`Listening on port ${dbPort}`);
     });
