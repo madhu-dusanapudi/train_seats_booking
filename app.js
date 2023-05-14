@@ -1,5 +1,6 @@
 import express from 'express'
 import dotenv from 'dotenv'
+import cors from 'cors'
 import MongooseConnector from './src/mongooseConnector.js'
 import router from './src/api\'s/router.js';
 dotenv.config()
@@ -13,6 +14,8 @@ await MongooseConnector()
 // GET /seats
 // Get the availability status of all seats
 app.use('',router)
+app.use(cors());
+app.options("*", cors());
 
 try {
   const port = parseInt(process.env.PORT) || 8080;
