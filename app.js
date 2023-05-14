@@ -18,7 +18,7 @@ app.use('',router)
 try {
   const port = parseInt(process.env.PORT) || 8080;
 app.listen(port, () => {
-  console.log(`helloworld: listening on port ${port}`);
+  console.log(`listening on port ${port}`);
 });
     // const dbPort = process.env.PORT || 8080
     // app.listen(dbPort, '0.0.0.0');
