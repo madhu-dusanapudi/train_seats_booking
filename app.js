@@ -17,9 +17,10 @@ app.use('',router)
 
 try {
     const dbPort = process.env.PORT || 8080
-    var server = app.listen(dbPort, () => {
-      console.info(`Listening on port ${dbPort}`);
-    });
+    app.listen(PORT, '0.0.0.0');
+    // var server = app.listen(dbPort, () => {
+    //   console.info(`Listening on port ${dbPort}`);
+    // });
   } catch(error) {
     console.log(error)
     process.exit(1)
