@@ -16,8 +16,12 @@ await MongooseConnector()
 app.use('',router)
 
 try {
-    const dbPort = process.env.PORT || 8080
-    app.listen(dbPort, '0.0.0.0');
+  const port = parseInt(process.env.PORT) || 8080;
+app.listen(port, () => {
+  console.log(`helloworld: listening on port ${port}`);
+});
+    // const dbPort = process.env.PORT || 8080
+    // app.listen(dbPort, '0.0.0.0');
     // var server = app.listen(dbPort, () => {
     //   console.info(`Listening on port ${dbPort}`);
     // });
