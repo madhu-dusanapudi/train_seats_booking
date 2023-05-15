@@ -8,11 +8,13 @@ const app = express();
 
 // Set up middleware to parse incoming JSON data
 app.use(express.json());
-await MongooseConnector()
+app.set('trust proxy', true);
+
 // Define the routes
 app.use('',router)
 app.use(cors());
 app.options("*", cors());
+await MongooseConnector()
 
 try {
   const port = parseInt(process.env.PORT) || 8080;

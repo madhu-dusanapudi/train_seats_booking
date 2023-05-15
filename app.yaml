@@ -2,7 +2,3 @@
 
 runtime: nodejs14
 vm: false
-host: "https://train-seats-booking.uc.r.appspot.com"
-x-google-endpoints:
-- name: "https://train-seats-booking.uc.r.appspot.com"
-  allowCors: True
