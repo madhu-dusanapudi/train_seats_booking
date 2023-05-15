@@ -4,6 +4,7 @@ class Bookings{
     async GetAllSeats(req,res){
         try {
             const seats = await GetAllSeats();
+            res.set
             res.status(200).json(seats);
           } catch (error) {
             res.status(500).json({ message: error.message });
