@@ -4,7 +4,7 @@ class Bookings{
     async GetAllSeats(req,res){
         try {
             const seats = await GetAllSeats();
-            res.set
+            console.log("----",res.getHeaders())
             res.status(200).json(seats);
           } catch (error) {
             res.status(500).json({ message: error.message });
@@ -13,6 +13,8 @@ class Bookings{
     async BookSeat(req,res){
         try{
         const { name, seats } = req.body;
+        console.log("----",res.getHeaders())
+
         const ROW_SEATS = [7,7,7,7,7,7,7,7,7,7,7,3];
         let numSeats = parseInt(seats);
         if(numSeats <= 0 || numSeats > 7) {
