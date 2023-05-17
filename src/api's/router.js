@@ -5,5 +5,5 @@ import cors from 'cors'
 const bookings=new Bookings();
 
 router.get('/seats',cors(),bookings.GetAllSeats)
-router.post('/book',cors(),bookings.BookSeat)
+router.post('/book',bookings.BookSeat)
 export default router
