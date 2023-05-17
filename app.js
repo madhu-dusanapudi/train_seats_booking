@@ -12,7 +12,9 @@ app.set('trust proxy', true);
 
 // Define the routes
 app.use('',router)
-app.use(cors());
+app.use(cors({
+    methods: ['GET','POST']
+}));
 app.options("*", cors());
 await MongooseConnector()
 
