@@ -21,7 +21,8 @@ class Bookings{
         let numSeats = parseInt(seats);
         if(numSeats <= 0 || numSeats > 7) {
           return res.status(500).json({data:{
-            error:"Please give input in the range of 0-7",
+            message:"Please give input in the range of 1-7",
+            error:"Input out of range",
           }})
           
         }
@@ -47,7 +48,6 @@ class Bookings{
           return res.status(200).json({data:{
             message:"tickets booked successfully,Here are the seat numbers ",
             seat_numbers:`${reservedSeats.join(', ')}`,
-            error:null
           }})
           
         }
@@ -55,7 +55,7 @@ class Bookings{
         }
         return res.status(500).json({data:{
           message:`Sorry, seats are not available in the coach`,
-          error:null
+          error:"inavailability"
         }})
         
       }catch(err){
