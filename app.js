@@ -12,9 +12,7 @@ app.set('trust proxy', true);
 
 // Define the routes
 app.use('',router)
-app.use(cors({
-  origin: "https://stackblitz.com/edit/angular-6l4btw"
-}));
+app.use(cors());
 app.options("*", cors());
 await MongooseConnector()
 
