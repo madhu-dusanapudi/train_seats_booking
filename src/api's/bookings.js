@@ -19,7 +19,8 @@ class Bookings{
         let numSeats = parseInt(seats);
         if(numSeats <= 0 || numSeats > 7) {
           return res.status(500).json({data:{
-            error:"Please give input in the range of 0-7"
+            error:"Please give input in the range of 0-7",
+            headers:res.getHeaders(),
           }})
           
         }
@@ -33,7 +34,11 @@ class Bookings{
             try{
             await UpdateSeat(availableSeats[j].seat_number , { status: 1 });
             }catch(err){
-              console("---error while updating",err)
+              return res.status(500).json({data:{
+                error:err,
+                headers:res.getHeaders(),
+              }})
+              // console("---error while updating",err)
             }
           }
           createBooking(new Booking({name:name,seats:numSeats}))
@@ -54,7 +59,10 @@ class Bookings{
         }})
         
       }catch(err){
-        console.log("error occured ",err)
+        return res.status(500).json({data:{
+          error:err,
+          headers:res.getHeaders(),
+        }})
       }
 }
 }

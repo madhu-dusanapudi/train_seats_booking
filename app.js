@@ -13,7 +13,7 @@ app.set('trust proxy', true);
 // Define the routes
 app.use('',router)
 app.use(cors({
-    methods: ['GET','POST']
+  Origin: "https://angular-cxeep1.stackblitz.io"
 }));
 app.options("*", cors());
 await MongooseConnector()
