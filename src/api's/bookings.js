@@ -4,7 +4,6 @@ class Bookings{
     async GetAllSeats(req,res){
         try {
             const seats = await GetAllSeats();
-            console.log("----",res.getHeaders())
             res.status(200).json(seats);
           } catch (error) {
             res.status(500).json({ message: error.message });
@@ -17,14 +16,12 @@ class Bookings{
         res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
         res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers');
         res.setHeader('Content-Type', 'application/json');
-        console.log("----",res.getHeaders())
 
         const ROW_SEATS = [7,7,7,7,7,7,7,7,7,7,7,3];
         let numSeats = parseInt(seats);
         if(numSeats <= 0 || numSeats > 7) {
           return res.status(500).json({data:{
             error:"Please give input in the range of 0-7",
-            headers:res.getHeaders(),
           }})
           
         }
@@ -40,7 +37,6 @@ class Bookings{
             }catch(err){
               return res.status(500).json({data:{
                 error:err,
-                headers:res.getHeaders(),
               }})
               // console("---error while updating",err)
             }
@@ -65,7 +61,6 @@ class Bookings{
       }catch(err){
         return res.status(500).json({data:{
           error:err,
-          headers:res.getHeaders(),
         }})
       }
 }

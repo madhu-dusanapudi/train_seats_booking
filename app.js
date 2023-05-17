@@ -19,8 +19,6 @@ app.use((req,res,next)=>{
    next();
   })
   app.use('',router)
-
-// app.options("*", cors());
 await MongooseConnector()
 
 try {

@@ -16,7 +16,7 @@ const UpdateSeat = async (seat_number, seatSchema = {}) => {
     );
 }
 async function GetAllSeats() {
-    return await Seat.find({}).lean()
+    return await Seat.find({}).sort({seat_number:1})
 }
 async function GetSeats(query) {
     return await Seat.find(query).lean()
