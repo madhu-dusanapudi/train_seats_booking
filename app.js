@@ -11,7 +11,6 @@ app.use(express.json());
 app.set('trust proxy', true);
 
 // Define the routes
-app.use('',router)
 app.use(cors());
 app.use((req,res,next)=>{
    res.setHeader('Access-Control-Allow-Origin', '*');
@@ -19,6 +18,8 @@ app.use((req,res,next)=>{
    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers');
    next();
   })
+  app.use('',router)
+
 // app.options("*", cors());
 await MongooseConnector()
 
