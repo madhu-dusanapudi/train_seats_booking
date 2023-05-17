@@ -6,7 +6,7 @@ class Bookings{
             const seats = await GetAllSeats();
             res.status(200).json(seats);
           } catch (error) {
-            res.status(500).json({ message: error.message });
+            res.json({ message: error.message });
           }
     }
     async BookSeat(req,res){
@@ -20,7 +20,7 @@ class Bookings{
         const ROW_SEATS = [7,7,7,7,7,7,7,7,7,7,7,3];
         let numSeats = parseInt(seats);
         if(numSeats <= 0 || numSeats > 7) {
-          return res.status(500).json({data:{
+          return res.json({data:{
             message:"Please give input in the range of 1-7",
             error:"Input out of range",
           }})
@@ -36,7 +36,7 @@ class Bookings{
             try{
             await UpdateSeat(availableSeats[j].seat_number , { status: 1 });
             }catch(err){
-              return res.status(500).json({data:{
+              return res.json({data:{
                 error:err,
               }})
               // console("---error while updating",err)
@@ -53,13 +53,13 @@ class Bookings{
         }
         offset_value+=ROW_SEATS[i]
         }
-        return res.status(500).json({data:{
+        return res.json({data:{
           message:`Sorry, seats are not available in the coach`,
           error:"inavailability"
         }})
         
       }catch(err){
-        return res.status(500).json({data:{
+        return res.json({data:{
           error:err,
         }})
       }
