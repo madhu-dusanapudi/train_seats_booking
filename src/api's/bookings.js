@@ -54,7 +54,7 @@ class Bookings{
         offset_value+=ROW_SEATS[i]
         }
         return res.status(500).json({data:{
-          message:`Sorry, ${numSeats} seats are not available in the coach`,
+          message:`Sorry, seats are not available in the coach`,
           error:null
         }})
         
