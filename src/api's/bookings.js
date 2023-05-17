@@ -13,8 +13,9 @@ class Bookings{
     async BookSeat(req,res){
         try{
         const { name, seats } = req.body;
-        res.setHeader('Access-Control-Allow-Methods', 'POST');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+        res.setHeader('Access-Control-Allow-Origin', '*');
+        res.setHeader('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE,OPTIONS');
+        res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers');
         console.log("----",res.getHeaders())
 
         const ROW_SEATS = [7,7,7,7,7,7,7,7,7,7,7,3];
